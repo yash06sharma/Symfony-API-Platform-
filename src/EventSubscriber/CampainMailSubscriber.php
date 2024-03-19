@@ -37,14 +37,14 @@ final class CampainMailSubscriber implements EventSubscriberInterface
         if (!$campain instanceof Campain || Request::METHOD_GET !== $method) {
             return;
         }
-        // echo($method);die;
+        // print_r($campain);die;
         $message = (new Email())
         ->from('tutuapp.center.dmn@gmail.com')
         ->to('06yashsharma@gmail.com')
         ->subject('Trial For Mail')
         ->text(sprintf('The book #%d has been added.',"Yash"));
         
-        $this->mailer->send($message);
+        // $this->mailer->send($message);
     }
 
 }
